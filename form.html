@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpotiMy</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="shortcut icon" href="public/img/logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <body data-bs-theme="dark">
@@ -13,7 +13,7 @@
   <header>
     <nav class="navbar fixed-top navbar-expand-md bg-body-tertiary"  aria-label="Site navigation">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">SpotiMy</a>
+        <a class="navbar-brand" href="index.html"><img src="public/img/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">SpotiMy</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -37,43 +37,40 @@
     </nav>
   </header>
   <main>
-    <div class="card mx-5 my-5">
+    <div class="maximo-expandible m-5">
       <div class="card-body mx-5">
         <p class="fs-4">Usuario</p>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Tu nombre</label>
-          <input class="form-control cambiar-borde" type="text" placeholder="..." aria-label="default input example">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Tu email</label>
-          <input type="email" class="form-control cambiar-borde" id="exampleFormControlInput1" placeholder="...">
-        </div>
+        <form action="/guardar" method="POST">
+          <div class="mb-3">
+            <label class="form-label">Tu nombre</label>
+            <input class="form-control cambiar-borde" name="nombreUsuario" type="text" placeholder="...">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Tu email</label>
+            <input type="email" class="form-control cambiar-borde" name="email" placeholder="...">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Sobre qué nos querés hablar?</label>
+            <select class="form-select cambiar-borde" name="tipo">
+              <option selected disabled>...</option>
+              <option value="Artista">Artista</option>
+              <option value="Album">Álbum</option>
+              <option value="Cancion">Canción</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input class="form-control cambiar-borde" name="nombreTipo" type="text" placeholder="Como lo buscamos?">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <textarea class="form-control cambiar-borde" name="descripcionTipo" rows="3" placeholder="Cual es tu opinión?"></textarea>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-secondary">Enviar Datos</button>
+          </div>
+        </form>
       </div>
-      <div class="card-body mx-5">
-        <p class="fs-4">Música</p>
-        
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Sobre que nos queres hablar?</label>
-          <select class="form-select form-select-md cambiar-borde" aria-label="Small select example">
-            <option selected>...</option>
-            <option value="1">Artista</option>
-            <option value="2">Album</option>
-            <option value="3">Canción</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-          <input class="form-control cambiar-borde" type="text" placeholder="Como lo buscamos?" aria-label="default input example">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-          <textarea class="form-control cambiar-borde" id="exampleFormControlTextarea1" placeholder="Cual es su historia?" rows="3"></textarea>
-        </div>
-      </div>
-      <div class="mb-3 contenedor-boton mx-5">
-        <button type="button" class="btn btn-secondary" >Enviar Datos</button>
-      </div>
-    </div>
   </main>
 
   <div class="container d-block">
