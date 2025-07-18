@@ -30,7 +30,7 @@ CREATE TABLE `opiniones` (
   `descripcionTipo` text NOT NULL,
   `idOpinion` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`idOpinion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `opiniones` (
 
 LOCK TABLES `opiniones` WRITE;
 /*!40000 ALTER TABLE `opiniones` DISABLE KEYS */;
+INSERT INTO `opiniones` VALUES ('fran','franmiceli08@gmail.com','Artista','ciro','ciro es un crack lo quiero mucho escucho mucho summusica',1);
 /*!40000 ALTER TABLE `opiniones` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-17 11:18:55
+-- Dump completed on 2025-07-18  8:15:52

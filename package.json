@@ -16,5 +16,9 @@
     "url": "https://github.com/fmicelii/pagina_spotiMy/issues"
   },
   "homepage": "https://github.com/fmicelii/pagina_spotiMy#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
 }
