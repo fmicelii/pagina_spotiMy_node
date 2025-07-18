@@ -51,6 +51,10 @@ h1{
 .mtb-6 {
     margin: 4rem 0;
 }
+.cover-container {
+    max-width: 42em;
+    margin: 0 auto;
+}
 
 @media (max-width: 576px) {
     .contenido-general{

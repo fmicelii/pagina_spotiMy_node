@@ -42,10 +42,10 @@ app.post('/guardar', (req, res) => {
   db.query(sql, valores, (err, result) => {
     if (err) {
       console.error('❌ Error al insertar los datos:', err);
-      return res.send('Hubo un error al guardar los datos.');
+      return res.send('Hubo un error al guardar los datos.' + __dirname);
     }
     console.log('📥 Opinión guardada correctamente');
-    res.send('<h2>¡Gracias por tu opinión!</h2><a href="/">Volver al inicio</a>');
+    res.sendFile(path.join(__dirname, 'public', 'agradecimiento.html'));
   });
 });
 

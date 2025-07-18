@@ -11,22 +11,30 @@
 <body data-bs-theme="dark">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <header>
-    <nav class="navbar fixed-top navbar-expand-md bg-body-tertiary"  aria-label="Site navigation">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">SpotiMy</a>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+          SpotiMy
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="form.html">Crear Perfil</a>
+              <a class="nav-link active" aria-current="page" href="/form">Crear Perfil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html#artistas">Artistas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#albums">Albumes</a>
+              <a class="nav-link" href="index.html#albums">Álbumes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Canciones</a>
@@ -35,36 +43,47 @@
         </div>
       </div>
     </nav>
+    
   </header>
   <main>
     <div class="maximo-expandible m-5">
       <div class="card-body mx-5">
         <p class="fs-4">Usuario</p>
-        <form action="/guardar" method="POST">
+        <form action="/guardar" method="POST" class="needs-validation" novalidate>
           <div class="mb-3">
-            <label class="form-label">Tu nombre</label>
-            <input class="form-control cambiar-borde" name="nombreUsuario" type="text" placeholder="...">
+            <label class="form-label" for="nombreUsuario">Tu nombre/apodo</label>
+            <input class="form-control cambiar-borde" name="nombreUsuario" id="nombreUsuario" type="text" placeholder="..." required>
+            <div class="invalid-feedback">Por favor ingresá tu nombre/apodo.</div>
           </div>
+        
           <div class="mb-3">
-            <label class="form-label">Tu email</label>
-            <input type="email" class="form-control cambiar-borde" name="email" placeholder="...">
+            <label class="form-label" for="email">Tu email</label>
+            <input type="email" class="form-control cambiar-borde" name="email" id="email" placeholder="..." required>
+            <div class="invalid-feedback">Por favor ingresá un email válido.</div>
           </div>
+        
           <div class="mb-3">
-            <label class="form-label">Sobre qué nos querés hablar?</label>
-            <select class="form-select cambiar-borde" name="tipo">
-              <option selected disabled>...</option>
+            <label class="form-label" for="tipo">Sobre qué nos querés hablar?</label>
+            <select class="form-select cambiar-borde" name="tipo" id="tipo" required>
+              <option selected disabled value="">Elegí una opción</option>
               <option value="Artista">Artista</option>
               <option value="Album">Álbum</option>
               <option value="Cancion">Canción</option>
             </select>
+            <div class="invalid-feedback">Elegí una opción válida.</div>
           </div>
+        
           <div class="mb-3">
-            <label class="form-label">Nombre</label>
-            <input class="form-control cambiar-borde" name="nombreTipo" type="text" placeholder="Como lo buscamos?">
+            <label class="form-label" for="nombreTipo">Nombre</label>
+            <input class="form-control cambiar-borde" name="nombreTipo" id="nombreTipo" type="text" placeholder="¿Cómo lo buscamos?" required>
+            <div class="invalid-feedback">Este campo es obligatorio.</div>
           </div>
+        
           <div class="mb-3">
-            <label class="form-label">Descripción</label>
-            <textarea class="form-control cambiar-borde" name="descripcionTipo" rows="3" placeholder="Cual es tu opinión?"></textarea>
+            <label class="form-label" for="descripcionTipo">Descripción</label>
+            <textarea
+            name="descripcionTipo" id="descripcionTipo" class="form-control cambiar-borde" placeholder="Contanos tu opinión" rows="3" required minlength="30"></textarea>            
+            <div class="invalid-feedback">La descripción debe tener al menos 30 caracteres.</div>
           </div>
           <div class="mb-3">
             <button type="submit" class="btn btn-secondary">Enviar Datos</button>
@@ -77,16 +96,16 @@
     <footer class="pt-3 mt-4">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+          <a href="index.html" class="nav-link px-2 text-body-secondary">Home</a>
         </li>
         <li class="nav-item">
-          <a href="#artistas" class="nav-link px-2 text-body-secondary">Artistas</a>
+          <a href="index.html#artistas" class="nav-link px-2 text-body-secondary">Artistas</a>
         </li>
         <li class="nav-item">
-          <a href="#albums" class="nav-link px-2 text-body-secondary">Albums</a>
+          <a href="index.html#albums" class="nav-link px-2 text-body-secondary">Albums</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link px-2 text-body-secondary">Form</a>
+          <a href="form" class="nav-link px-2 text-body-secondary">Form</a>
         </li>
       </ul>
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -111,6 +130,24 @@
       <p class="text-center text-body-secondary">© 2025 SpotiMy</p>
     </footer>
   </div>
+  <script>
+    (() => {
+      'use strict'
+    
+      const forms = document.querySelectorAll('.needs-validation')
+    
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+    
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+    </script>    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
